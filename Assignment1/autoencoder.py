@@ -1,8 +1,4 @@
-import numpy as np
-
-import torch
 import torch.nn as nn
-
 
 class Autoencoder(nn.Module):
     """
@@ -59,3 +55,5 @@ class Autoencoder(nn.Module):
 if __name__ == "__main__":
 
     model = Autoencoder(784, [20, 10], 'sigmoid')
+    from torchsummary import summary
+    summary(model, input_size=(1, 784))
